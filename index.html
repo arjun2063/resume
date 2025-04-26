@@ -1,192 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Portfolio</title>
-  
-  <style>
-    .header {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: rgb(221, 44, 44);
-    text-align: center;
-    padding: 100px 20px;
-    
-}
-
-.container {
-    background-color: rgba(0, 0, 0, 0.5); /* dark overlay for text visibility */
-    padding: 40px;
-    border-radius: 15px;
-    max-width: 800px;
-    margin: auto;
-}
-
-h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-.contact {
-    margin-top: 40px;
-}
-
-a {
-    color: #00ffff;
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-      <nav>
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-    header {
-      background-color: #4c0ef8;
-      color:rgb(13, 241, 241);
-      padding: 2rem 1rem;
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: 100;
-    }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      color: #2c3e50;
-    }
-    .skills, .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .card {
-      background: white;
-      background-image:image(atm.jpg) ;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
-    }
-    footer {
-      background: #049735;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      border-image-repeat: round;
-      image size: 50pxl;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 1rem;
-      background-color: rgb(119, 0, 255);
-    }
-    
-  </style>
-</head>
-  <header>
-    <h1><marquee behavior="" direction="">Welcome To you MY website I'am Arjun Thapa Magar i am form pyuthan Naubahini municipalilty 2 ligha pyuthan</marquee></h1>
-    <h1>Arjun Thapa Magar</h1>
-    <p>I am IT Student beginning Web developer's</p>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I am Arjun Thapa Magar, an enthusiastic IT student. I love exploring new technologies and building creative projects. I'm passionate about music and movies too!</p>
-  </section>
-  
-
-  <section id="skills">
-    <h2> Computer Skills</h2>
-    <div class="skills">
-      <div class="card">Beginning HTML</div>
-      <div class="card">Beginning CSS</div>
-      <div class="card">DIploma Computer knowladge</div>
-      <div class="card"> microsoft office of knowladge</div>
-      <div class="card">Graphics Designer</div>
-      <div class="card">filling online form</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2> OTHER</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Future plan</h3>
-        <p>Best Designer.</p>
-        <p>Best website developer</p>
-      </div>
-      <div class="card">
-        <h3>Intrested</h3>
-        <p>Playing video Games and intrested in designer and coding .</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="Intrested">
-    <h2>making website </h2>
-    <p>Designing</p>
-    <p>Playing video Games</p>
-  </section>
-
-  <section id="resume">
-    <h2>SEND YOUR INFORMATINO</h2>
-    <a href="#" class="btn">Attach your personal document</a>
-  </section>
-
-</style>
+    <meta charset="UTF-8">
+    <title>Happy Birthday To Me!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
- <h2>ABOUT ME</h2>
-<h1>Hi, I'm Arjun Thapa Magar</h1>
-<p>I am an IT student with a love for technology, music, and movies. I believe in learning by doing and always trying new things.</p>
+    <div class="container">
+        <h1>🎉 Happy Birthday To Me! 🎉</h1>
+        <p>तपाईंलाई सन्देश लेख्नुस्:</p>
+        <input type="text" id="messageInput" placeholder="यहाँ लेख्नुस्...">
+        <button onclick="sendMessage()">पठाउनुहोस्</button>
+        
+        <div id="messages"></div>
 
-<div class="ADDRESS">
-    <p>Coutry:Nepal</p>
-    <p>District:PYUTHAN</p>
-    <p>municipalilty : Naubahini Municipality 2 LIgha pyuthan</p>
-    <p>Marital status : Single</p>
-    <p>My no Gf i only single and loyel person</p>
-  
-</div>
-</div>
-<h1>MY PICTURE</h1>
-<div class="ajun">
-  <img src="atm.jpg.jpg" alt="Image 1" width="50%">
 
-</div>
+        
+    </div>
 
-  <footer>
-    <p>&copy; Thank you </p>
-  </footer>
+    <canvas id="confetti"></canvas>
 
+    <script src="script.js"></script>
+    <style>
+      margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('atm.jpg.jpg');  /* यहाँ तपाईंको फोटो राख्नुहोस् */
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+    </style>
 </body>
 </html>
