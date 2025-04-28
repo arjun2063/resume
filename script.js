@@ -1,62 +1,67 @@
-function sendMessage() {
-    const input = document.getElementById('messageInput');
-    const messages = document.getElementById('messages');
-
-    if (input.value.trim() !== "") {
-        const newMessage = document.createElement('div');
-        newMessage.textContent = "🎈 " + input.value;
-        messages.appendChild(newMessage);
-        input.value = "";
-
-        launchConfetti();
+// Wish Adding Function
+function addWish() {
+    var wishInput = document.getElementById('wishInput');
+    var wishText = wishInput.value.trim();
+    if (wishText !== "") {
+        var messagesDiv = document.getElementById('messages');
+        var newMessage = document.createElement('p');
+        newMessage.textContent = wishText;
+        messagesDiv.appendChild(newMessage);
+        wishInput.value = "";
     }
 }
 
-// Confetti animation
+// Simple Confetti Animation (Optional Fancy Confetti)
 const canvas = document.getElementById('confetti');
 const ctx = canvas.getContext('2d');
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const confetti = [];
+let pieces = [];
 
-for (let i = 0; i < 100; i++) {
-    confetti.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 6 + 4,
-        d: Math.random() * 5 + 1,
-        color: "hsl(" + Math.random() * 360 + ", 70%, 60%)",
-    });
+function randomColor() {
+    const colors = ['#ff6f91', '#ffcccb', '#ffd700', '#00bfff', '#adff2f'];
+    return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function drawConfetti() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < confetti.length; i++) {
-        const c = confetti[i];
-        ctx.beginPath();
-        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2, false);
-        ctx.fillStyle = c.color;
-        ctx.fill();
-    }
-    moveConfetti();
-}
+function ConfettiPiece() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height - canvas.height;
+    this.size = Math.random() * 10 + 5;
+    this.speed = Math.random() * 3 + 2;
+    this.color = randomColor();
 
-function moveConfetti() {
-    for (let i = 0; i < confetti.length; i++) {
-        const c = confetti[i];
-        c.y += c.d;
-        if (c.y > canvas.height) {
-            c.y = 0;
-            c.x = Math.random() * canvas.width;
+    this.update = function() {
+        this.y += this.speed;
+        if (this.y > canvas.height) {
+            this.y = -this.size;
+            this.x = Math.random() * canvas.width;
         }
+    };
+
+    this.draw = function() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.size, this.size);
+    };
+}
+
+for (let i = 0; i < 150; i++) {
+    pieces.push(new ConfettiPiece());
+}
+
+function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let piece of pieces) {
+        piece.update();
+        piece.draw();
     }
+    requestAnimationFrame(animateConfetti);
 }
 
-function launchConfetti() {
-    setInterval(drawConfetti, 20);
-}
+animateConfetti();
 
+// Responsive Canvas
 window.addEventListener('resize', function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
