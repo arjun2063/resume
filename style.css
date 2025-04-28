@@ -1,87 +1,44 @@
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f8c7d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-image: url('atm.jpg.jpg');  /* यहाँ तपाईंको फोटो राख्नुहोस् */
-  background-size: cover;
-  background-position: center;
-  overflow-x: hidden;
 }
 
 .container {
   text-align: center;
-  margin-top: 500px;
-  background-color: rgba(43, 17, 187, 0.7);  /* Content background to make text readable */
   padding: 20px;
   border-radius: 10px;
-  max-width: 100%;  /* Responsive width for different devices */
-  margin-left: auto;
-  margin-right: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-input {
-  padding: 10px;
-  width: 90%;
-  max-width: 300px;  /* Input field width adjusts with screen size */
-  border-radius: 5px;
-  border: none;
-  margin-top: 10px;
+  color: #e74c3c;
+  font-size: 3em;
+  animation: fadeIn 2s ease-in-out;
 }
 
 button {
   padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #ff6f91;
-  color: white;
+  font-size: 1.2em;
+  background-color: #e74c3c;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;  /* Smooth transition for hover effect */
+  margin-top: 20px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #ff477e;  /* Darker pink on hover */
-  transform: scale(1.1);  /* Slightly enlarge the button */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Shadow effect on hover */
+  background-color: #c0392b;
 }
 
-#messages {
-  margin-top: 30px;
-  color: white;
-  font-size: 1.2rem;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
-
-#confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.birthday-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 5px solid white;
-}
-
-/* Mobile View */
-@media only screen and (max-width: 600px) {
-  .birthday-photo {
-      width
